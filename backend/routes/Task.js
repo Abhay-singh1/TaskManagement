@@ -54,7 +54,7 @@ router.get('/:userID', async(req,res)=>{
 
 
 
-router.get('/:id', async(req,res)=>{
+router.get('/single/:id', async(req,res)=>{
     try {
         let {id} = req.params
         const response = await Task.findById(id)
