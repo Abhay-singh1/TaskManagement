@@ -11,7 +11,7 @@ const Home = () => {
   const userID = window.localStorage.getItem('userID')
   
   const fetchData =async()=>{
-    let response = await axios.get(`http://localhost:5000/task/${userID}`)
+    let response = await axios.get(`https://task-management-rouge.vercel.app/task/${userID}`)
     console.log(response.data)
     setdata(response.data)
   }
