@@ -30,12 +30,12 @@ const Home = () => {
   const editTask = async(e)=>{
     e.preventDefault();
     try {
+      setShowModal(!showModal)
        await axios.put(`https://task-management-rouge.vercel.app/task/${userID}/${id}`,
         task        
       )
       console.log('task updated')
       fetchData()
-      setShowModal(!showModal)
     } catch (err) {
       console.log(err)
     }
