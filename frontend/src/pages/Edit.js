@@ -13,7 +13,7 @@ const Home = () => {
   const userID = window.localStorage.getItem('userID')
   
   const fetchData =async()=>{
-    let response = await axios.get('http://localhost:5000/task/')
+    let response = await axios.get('https://task-management-rouge.vercel.app/task/')
     console.log(response.data)
     setdata(response.data)
   }
@@ -21,7 +21,7 @@ const Home = () => {
 
   const fetchTask = async(id)=>{
     setId(id)
-    let response = await axios.get(`http://localhost:5000/task/${id}`)
+    let response = await axios.get(`https://task-management-rouge.vercel.app/task/${id}`)
     console.log(response.data) 
     setTask(response.data)
     setShowModal(!showModal)
@@ -30,7 +30,7 @@ const Home = () => {
   const editTask = async(e)=>{
     e.preventDefault();
     try {
-       await axios.put(`http://localhost:5000/task/${userID}/${id}`,
+       await axios.put(`https://task-management-rouge.vercel.app/task/${userID}/${id}`,
         task        
       )
       console.log('task updated')
@@ -44,7 +44,7 @@ const Home = () => {
 
   const DeleteTask =async (id)=>{
     try {
-      await axios.delete(`http://localhost:5000/task/${userID}/${id}`)
+      await axios.delete(`https://task-management-rouge.vercel.app/task/${userID}/${id}`)
       fetchData()
       console.log('deleted')
     } catch (err) {
