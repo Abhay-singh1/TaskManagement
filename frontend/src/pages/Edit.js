@@ -20,9 +20,9 @@ const Home = () => {
 
 
   const fetchTask = async(id)=>{
-    setId(id)
+    // setId(id)
     let response = await axios.get(`https://task-management-rouge.vercel.app/task/single/${id}`)
-    console.log(response.data) 
+    console.log(response) 
     setTask(response.data)
     setShowModal(!showModal)
   }
