@@ -56,7 +56,7 @@ router.get('/:userID', async(req,res)=>{
 
 router.get('/single/:id', async(req,res)=>{
     try {
-        let {id} = req.params
+        let {id} = req.params.id
         const response = await Task.findById(id)
         res.status(200).json(response)
         if(!response){
