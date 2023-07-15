@@ -17,7 +17,7 @@ const Register = () => {
     const handleSubmit = async(e)=>{
         e.preventDefault()
     try {
-        const response = await axios.post('http://localhost:5000/auth/register',{
+        const response = await axios.post('https://task-management-rouge.vercel.app/auth/register',{
             name,
             email,
             password
