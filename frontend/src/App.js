@@ -18,6 +18,7 @@ function App() {
   const handleLogin = ()=>{
     removeCookie('access_token', { path: '/', domain: 'localhost' });
     window.localStorage.removeItem('userID')
+    setLogin(!login)
   }
   return (
     <div className="App">
